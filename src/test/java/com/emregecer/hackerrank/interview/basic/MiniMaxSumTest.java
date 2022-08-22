@@ -8,26 +8,26 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PlusMinusTest extends IOTest {
+public class MiniMaxSumTest extends IOTest {
 
     @Test
     public void case1() {
-        List<Integer> integers = Arrays.asList(-4, 3, -9, 0, 4, 1);
-        PlusMinus.plusMinus(integers);
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
+        MiniMaxSum.miniMaxSum(integers);
 
         assertEquals(
-                String.join("0.500000", "0.333333", "0.166667"),
+                "10 14",
                 outputStreamCaptor.toString().trim()
         );
     }
 
     @Test
     public void case2() {
-        List<Integer> integers = Arrays.asList(1, 2, 3, -1, -2, -3, 0, 0);
-        PlusMinus.plusMinus(integers);
+        List<Integer> integers = Arrays.asList(7, 69, 2, 221, 8974);
+        MiniMaxSum.miniMaxSum(integers);
 
         assertEquals(
-                String.join(System.getProperty("line.separator"),"0.375000", "0.375000", "0.250000"),
+                "299 9271",
                 outputStreamCaptor.toString().trim()
         );
     }
