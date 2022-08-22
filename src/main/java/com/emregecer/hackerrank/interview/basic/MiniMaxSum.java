@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -29,20 +31,22 @@ public class MiniMaxSum {
      */
 
     public static void miniMaxSum(List<Integer> arr) {
-        int greatest = arr.stream().reduce((a, b) -> a > b ? a : b)
+        List<Long> longList = arr.stream()
+                .map(number -> Long.valueOf(String.valueOf(number)))
+                .sorted()
+                .collect(toList());
+
+        long maxSum = longList.stream()
+                .skip(1)
+                .reduce(Long::sum)
                 .orElseThrow(() -> new RuntimeException("Error"));
-        int lowest = arr.stream().reduce((a, b) -> a < b ? a : b)
+
+        long minSum = longList.stream()
+                .limit(longList.size() - 1)
+                .reduce(Long::sum)
                 .orElseThrow(() -> new RuntimeException("Error"));
 
-        int miniSum = arr.stream()
-                .filter(number -> number != greatest)
-                .reduce(0, Integer::sum);
-
-        int maxSum = arr.stream()
-                .filter(number -> number != lowest)
-                .reduce(0, Integer::sum);
-
-        System.out.println(miniSum + " " + maxSum);
+        System.out.println(minSum + " " + maxSum);
     }
 }
 
