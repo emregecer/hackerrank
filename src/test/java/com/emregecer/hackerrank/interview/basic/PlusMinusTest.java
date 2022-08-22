@@ -15,7 +15,7 @@ public class PlusMinusTest extends IOTest {
         PlusMinus.plusMinus(integers);
 
         assertEquals(
-                String.join("0.500000", "0.333333", "0.166667"),
+                String.join(System.getProperty("line.separator"), "0.500000", "0.333333", "0.166667"),
                 outputStreamCaptor.toString().trim()
         );
     }
