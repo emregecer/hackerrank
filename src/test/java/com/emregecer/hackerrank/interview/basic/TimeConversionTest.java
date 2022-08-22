@@ -14,4 +14,12 @@ public class TimeConversionTest {
                 "19:05:45"
         );
     }
+
+    @Test
+    public void case2() {
+        assertEquals(
+                timeConversion("11:05:45AM"),
+                "11:05:45"
+        );
+    }
 }

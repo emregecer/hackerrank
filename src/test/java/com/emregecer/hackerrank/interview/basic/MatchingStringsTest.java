@@ -2,7 +2,6 @@ package com.emregecer.hackerrank.interview.basic;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static com.emregecer.hackerrank.interview.basic.MatchingStrings.matchingStrings;
@@ -12,23 +11,23 @@ public class MatchingStringsTest {
 
     @Test
     public void case1() {
-        List<String> strings = Arrays.asList("aba", "baba", "aba", "xzxb");
-        List<String> queries = Arrays.asList("aba", "xzxb", "ab");
+        List<String> strings = List.of("aba", "baba", "aba", "xzxb");
+        List<String> queries = List.of("aba", "xzxb", "ab");
 
-        assertEquals(matchingStrings(strings, queries), Arrays.asList(2, 1, 0));
+        assertEquals(matchingStrings(strings, queries), List.of(2, 1, 0));
     }
 
     @Test
     public void case2() {
-        List<String> strings = Arrays.asList("def", "de", "fgh");
-        List<String> queries = Arrays.asList("de", "lmn", "fgh");
+        List<String> strings = List.of("def", "de", "fgh");
+        List<String> queries = List.of("de", "lmn", "fgh");
 
-        assertEquals(matchingStrings(strings, queries), Arrays.asList(1, 0, 1));
+        assertEquals(matchingStrings(strings, queries), List.of(1, 0, 1));
     }
 
     @Test
     public void case3() {
-        List<String> strings = Arrays.asList(
+        List<String> strings = List.of(
                 "abcde",
                 "sdaklfj",
                 "asdjf",
@@ -43,8 +42,8 @@ public class MatchingStringsTest {
                 "sdaklfj",
                 "asdjf"
         );
-        List<String> queries = Arrays.asList("abcde", "sdaklfj", "asdjf", "na", "basdn");
+        List<String> queries = List.of("abcde", "sdaklfj", "asdjf", "na", "basdn");
 
-        assertEquals(matchingStrings(strings, queries), Arrays.asList(1, 3, 4, 3, 2));
+        assertEquals(matchingStrings(strings, queries), List.of(1, 3, 4, 3, 2));
     }
 }

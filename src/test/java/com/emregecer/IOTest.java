@@ -22,7 +22,4 @@ public class IOTest {
         System.setOut(standardOut);
     }
 
-    protected String getOutput(String separator, String... lines) {
-        return String.join(separator, lines);
-    }
 }
